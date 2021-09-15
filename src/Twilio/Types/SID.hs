@@ -1,3 +1,4 @@
+{-#LANGUAGE CPP #-}
 {-#LANGUAGE DataKinds #-}
 {-#LANGUAGE DeriveDataTypeable #-}
 {-#LANGUAGE DeriveGeneric #-}
@@ -26,7 +27,9 @@ import Data.Bits (countLeadingZeros)
 import Data.Data (Data, Typeable)
 import Data.Hashable (Hashable)
 import Data.Ix (Ix)
+#if __GLASGOW_HASKELL__ <= 802
 import Data.Monoid ((<>))
+#endif
 import Data.String (IsString(fromString))
 import Data.Text (Text)
 import qualified Data.Text as T

@@ -14,7 +14,9 @@ module Twilio.Types.SID.TH
   ( createSID
   ) where
 
+#if __GLASGOW_HASKELL__ <= 802
 import Data.Monoid ((<>))
+#endif
 import Language.Haskell.TH
 #if MIN_VERSION_template_haskell(2,11,0)
   ( Bang(..)
